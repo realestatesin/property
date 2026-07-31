@@ -91,21 +91,37 @@
       align-items: center;
       flex-wrap: wrap;
     }
-    .logo h1 {
-      font-size: 1.7rem;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      background: #1a237e;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 14px rgba(26, 35, 126, 0.35);
+    }
+    .logo-text h1 {
+      font-size: 1.6rem;
       font-weight: 800;
       letter-spacing: -0.5px;
-      background: linear-gradient(135deg, #1E2A3E 0%, #2E7D32 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+      color: #1a237e;
+      line-height: 1.1;
     }
-    .logo span {
-      font-size: 0.7rem;
+    .logo-text span {
+      font-size: 0.65rem;
       font-weight: 500;
-      color: #2E7D32;
+      color: #1a237e;
       display: block;
       letter-spacing: 1px;
+      opacity: 0.7;
     }
     .nav-links a {
       margin-left: 28px;
@@ -115,7 +131,7 @@
       transition: 0.2s;
     }
     .nav-links a:hover {
-      color: #2E7D32;
+      color: #1a237e;
     }
     .mobile-menu {
       display: none;
@@ -451,6 +467,8 @@
       .nav-links { display: none; }
       .mobile-menu { display: block; }
       .hero-stats { flex-direction: column; gap: 8px; }
+      .logo-icon { width: 36px; height: 36px; font-size: 1rem; }
+      .logo-text h1 { font-size: 1.3rem; }
     }
   </style>
 </head>
@@ -458,8 +476,13 @@
 <nav class="navbar">
   <div class="container nav-flex">
     <div class="logo">
-      <h1>Crystal360</h1>
-      <span>Buy Property At Ease</span>
+      <div class="logo-icon">
+        <i class="fas fa-home"></i>
+      </div>
+      <div class="logo-text">
+        <h1>RealEstatePro</h1>
+        <span>Buy Property At Ease</span>
+      </div>
     </div>
     <div class="nav-links" id="navLinks">
       <a href="#home">Home</a>
