@@ -14,9 +14,10 @@
       font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
     }
 
+    /* ---------- PAGE BACKGROUND (matched to projivo) ---------- */
     body {
-      background-color: #f0f4f8;
-      color: #1a2634;
+      background-color: #f8fafc;
+      color: #1e293b;
       line-height: 1.6;
     }
 
@@ -26,26 +27,25 @@
       padding: 0 24px;
     }
 
-    /* ---------- HEADER - Mobile Friendly with Light White Background ---------- */
+    /* ---------- HEADER - Light White (matched to projivo) ---------- */
     .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 14px 0;
       flex-wrap: wrap;
-      background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
-      background-color: #f9fafb;
-      border-bottom: 1px solid #e5e9f0;
+      background-color: #ffffff;
+      border-bottom: 1px solid #eef2f6;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
 
     .logo {
       font-size: 1.6rem;
       font-weight: 700;
-      color: #1a2634;
+      color: #0f172a;
       letter-spacing: -0.5px;
       padding-left: 4px;
     }
@@ -67,16 +67,16 @@
       display: block;
       width: 26px;
       height: 3px;
-      background: #1a2634;
+      background: #1e293b;
       border-radius: 4px;
       transition: 0.3s;
     }
 
     .nav-links {
       display: flex;
-      gap: 24px;
+      gap: 28px;
       font-weight: 500;
-      color: #2c3e50;
+      color: #334155;
       align-items: center;
       flex-wrap: wrap;
     }
@@ -118,8 +118,8 @@
         width: 100%;
         gap: 12px;
         padding: 18px 0 12px;
-        background-color: #f9fafb;
-        border-top: 1px solid #e5e9f0;
+        background-color: #ffffff;
+        border-top: 1px solid #eef2f6;
         margin-top: 12px;
       }
       .nav-links.open {
@@ -128,7 +128,7 @@
       .nav-links a {
         width: 100%;
         padding: 10px 6px;
-        border-bottom: 1px solid #edf2f7;
+        border-bottom: 1px solid #f1f5f9;
         font-size: 1rem;
       }
       .nav-links a:last-child {
@@ -148,7 +148,7 @@
       }
     }
 
-    /* ---------- HERO (with new image & theme) ---------- */
+    /* ---------- HERO with new content ---------- */
     .hero {
       display: flex;
       flex-wrap: wrap;
@@ -164,17 +164,47 @@
       font-size: 2.8rem;
       font-weight: 700;
       line-height: 1.2;
-      color: #1a2634;
+      color: #0f172a;
     }
     .hero-content h1 i {
       color: #2a7f8c;
       margin-right: 6px;
     }
-    .hero-content p {
-      font-size: 1.15rem;
-      color: #2c3e50;
+    .hero-content .highlight-box {
+      background: #f1f5f9;
+      padding: 24px 28px;
+      border-radius: 20px;
       margin: 20px 0 28px;
-      max-width: 600px;
+      border-left: 5px solid #2a7f8c;
+    }
+    .hero-content .highlight-box p {
+      font-size: 1.15rem;
+      color: #1e293b;
+      margin: 0 0 12px 0;
+      font-weight: 500;
+    }
+    .hero-content .highlight-box .price-tag {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2a7f8c;
+      margin: 8px 0;
+    }
+    .hero-content .highlight-box .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px 40px;
+      margin-top: 16px;
+    }
+    .hero-content .highlight-box .stats span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: #0f172a;
+    }
+    .hero-content .highlight-box .stats i {
+      color: #2a7f8c;
+      font-size: 1.2rem;
     }
     .badge-group {
       display: flex;
@@ -183,11 +213,11 @@
       margin: 20px 0 10px;
     }
     .badge-group span {
-      background: #e2eaf0;
+      background: #eef2f6;
       padding: 6px 16px;
       border-radius: 40px;
       font-weight: 500;
-      color: #1a2634;
+      color: #0f172a;
       font-size: 0.9rem;
     }
     .badge-group i {
@@ -195,13 +225,38 @@
       color: #2a7f8c;
     }
 
-    /* Hero image - placed right after the paragraph */
+    /* WhatsApp Button */
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: 0.2s;
+      margin-top: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .whatsapp-btn:hover {
+      background: #1da851;
+      transform: scale(1.02);
+    }
+    .whatsapp-btn i {
+      font-size: 1.4rem;
+    }
+
+    /* Hero image */
     .hero-image-wrap {
       width: 100%;
       margin: 18px 0 10px;
       border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 12px 28px -8px rgba(0,0,0,0.10);
+      box-shadow: 0 12px 28px -8px rgba(0,0,0,0.08);
       max-width: 600px;
     }
     .hero-image-wrap img {
@@ -218,25 +273,25 @@
       background: #ffffff;
       padding: 28px 24px;
       border-radius: 24px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
       flex: 1 1 280px;
       min-width: 260px;
-      border: 1px solid #dce5ec;
+      border: 1px solid #eef2f6;
     }
     .hero-form h3 {
       font-size: 1.4rem;
       margin-bottom: 10px;
-      color: #1a2634;
+      color: #0f172a;
     }
     .hero-form p {
-      color: #3d5a73;
+      color: #475569;
       margin-bottom: 18px;
     }
     .hero-form input {
       width: 100%;
       padding: 13px 16px;
       border-radius: 40px;
-      border: 1px solid #cbd8e3;
+      border: 1px solid #e2e8f0;
       font-size: 1rem;
       margin-bottom: 12px;
       background: #f8fafc;
@@ -270,10 +325,10 @@
       font-size: 2rem;
       font-weight: 700;
       margin: 44px 0 16px;
-      color: #1a2634;
+      color: #0f172a;
     }
     .section-sub {
-      color: #2c3e50;
+      color: #334155;
       max-width: 700px;
       margin-bottom: 26px;
     }
@@ -286,24 +341,24 @@
       margin: 22px 0 10px;
     }
     .property-card {
-      background: #fff;
+      background: #ffffff;
       border-radius: 20px;
       padding: 0 0 18px 0;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
-      border: 1px solid #dce5ec;
+      border: 1px solid #eef2f6;
       transition: 0.25s;
       overflow: hidden;
     }
     .property-card:hover {
       transform: translateY(-4px);
-      border-color: #b0c8d4;
+      border-color: #cbd5e1;
       box-shadow: 0 16px 30px -8px rgba(42, 127, 140, 0.10);
     }
     .property-card .img-wrap {
       width: 100%;
       height: 190px;
       overflow: hidden;
-      background: #dce5ec;
+      background: #eef2f6;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -325,7 +380,7 @@
       margin-bottom: 4px;
     }
     .property-card .loc {
-      color: #3d5a73;
+      color: #475569;
       margin-bottom: 6px;
       font-weight: 500;
       font-size: 0.95rem;
@@ -357,11 +412,11 @@
       margin: 26px 0 18px;
     }
     .why-item, .service-item {
-      background: #fff;
+      background: #ffffff;
       padding: 16px 12px;
       border-radius: 20px;
       text-align: center;
-      border: 1px solid #dce5ec;
+      border: 1px solid #eef2f6;
       font-weight: 500;
       box-shadow: 0 4px 10px rgba(0,0,0,0.02);
       transition: 0.2s;
@@ -369,8 +424,8 @@
       font-size: 0.95rem;
     }
     .why-item:hover, .service-item:hover {
-      border-color: #b0c8d4;
-      background: #f7fafc;
+      border-color: #cbd5e1;
+      background: #f8fafc;
     }
     .why-item i, .service-item i {
       font-size: 1.6rem;
@@ -385,7 +440,7 @@
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 10px 16px;
-      background: #e2eaf0;
+      background: #eef2f6;
       padding: 24px 20px;
       border-radius: 50px;
       margin: 26px 0;
@@ -395,7 +450,7 @@
       align-items: center;
       gap: 10px;
       font-weight: 600;
-      color: #1a2634;
+      color: #0f172a;
       font-size: 0.95rem;
     }
     .step .num {
@@ -416,8 +471,8 @@
       overflow-x: auto;
       margin: 18px 0 28px;
       border-radius: 20px;
-      border: 1px solid #dce5ec;
-      background: #fff;
+      border: 1px solid #eef2f6;
+      background: #ffffff;
     }
     table {
       width: 100%;
@@ -426,17 +481,17 @@
       min-width: 500px;
     }
     th {
-      background: #e2eaf0;
+      background: #f1f5f9;
       text-align: left;
       padding: 14px 14px;
-      color: #1a2634;
+      color: #0f172a;
     }
     td {
       padding: 14px;
-      border-top: 1px solid #dce5ec;
+      border-top: 1px solid #eef2f6;
     }
     .badge-private {
-      background: #dce5ec;
+      background: #eef2f6;
       padding: 3px 12px;
       border-radius: 30px;
       font-size: 0.75rem;
@@ -452,11 +507,11 @@
       margin: 14px 0 22px;
     }
     .intl-item {
-      background: #fff;
+      background: #ffffff;
       padding: 12px 8px;
       border-radius: 40px;
       text-align: center;
-      border: 1px solid #cbd8e3;
+      border: 1px solid #e2e8f0;
       font-weight: 500;
       cursor: pointer;
       transition: 0.2s;
@@ -464,7 +519,7 @@
     }
     .intl-item:hover {
       border-color: #2a7f8c;
-      background: #f7fafc;
+      background: #f8fafc;
     }
     .intl-item i {
       margin-right: 6px;
@@ -475,7 +530,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 24px;
-      background: #e2eaf0;
+      background: #f1f5f9;
       padding: 24px 22px;
       border-radius: 28px;
       margin: 18px 0;
@@ -484,16 +539,16 @@
       flex: 1 1 160px;
     }
     .features-abroad h4 {
-      color: #1a2634;
+      color: #0f172a;
       font-size: 1rem;
     }
     .features-abroad p {
-      color: #2c3e50;
+      color: #334155;
       font-size: 0.9rem;
     }
     .btn-abroad {
       display: inline-block;
-      background: #1a2634;
+      background: #0f172a;
       color: #fff;
       padding: 12px 36px;
       border-radius: 60px;
@@ -509,7 +564,7 @@
       margin-left: 8px;
     }
     .btn-abroad:hover {
-      background: #2c3e50;
+      background: #1e293b;
     }
 
     /* ---------- TESTIMONIALS ---------- */
@@ -520,10 +575,10 @@
       margin: 22px 0;
     }
     .testimonial {
-      background: #fff;
+      background: #ffffff;
       padding: 20px 18px;
       border-radius: 22px;
-      border: 1px solid #dce5ec;
+      border: 1px solid #eef2f6;
     }
     .testimonial .stars {
       color: #f5b342;
@@ -537,10 +592,10 @@
     }
     .testimonial .name {
       font-weight: 700;
-      color: #1a2634;
+      color: #0f172a;
     }
     .testimonial .role {
-      color: #3d5a73;
+      color: #475569;
       font-size: 0.85rem;
     }
 
@@ -552,24 +607,24 @@
       margin: 26px 0 44px;
     }
     .faq-item {
-      background: #fff;
+      background: #ffffff;
       padding: 18px 20px;
       border-radius: 40px;
-      border: 1px solid #dce5ec;
+      border: 1px solid #eef2f6;
       cursor: pointer;
       transition: 0.2s;
     }
     .faq-item:hover {
-      border-color: #b0c8d4;
-      background: #f7fafc;
+      border-color: #cbd5e1;
+      background: #f8fafc;
     }
     .faq-item strong {
       display: block;
       font-size: 1rem;
-      color: #1a2634;
+      color: #0f172a;
     }
     .faq-item p {
-      color: #2c3e50;
+      color: #334155;
       margin-top: 4px;
       font-size: 0.95rem;
     }
@@ -580,10 +635,10 @@
 
     /* ---------- FOOTER ---------- */
     .footer {
-      border-top: 1px solid #cbd8e3;
+      border-top: 1px solid #e2e8f0;
       padding: 26px 0 18px;
       text-align: center;
-      color: #2c3e50;
+      color: #334155;
       font-size: 0.9rem;
     }
     .footer-links {
@@ -594,7 +649,7 @@
       margin-top: 10px;
     }
     .footer-links a {
-      color: #2c3e50;
+      color: #334155;
       text-decoration: none;
       cursor: pointer;
       transition: 0.2s;
@@ -613,6 +668,8 @@
       .section-title { font-size: 1.7rem; }
       .footer-links { gap: 12px; }
       .hero-form { padding: 22px 18px; }
+      .hero-content .highlight-box { padding: 18px 16px; }
+      .hero-content .highlight-box .price-tag { font-size: 1.6rem; }
     }
 
     @media (max-width: 480px) {
@@ -624,6 +681,8 @@
       .logo { font-size: 1.2rem; }
       .steps { padding: 18px 16px; }
       .step { font-size: 0.85rem; }
+      .hero-content .highlight-box .stats { gap: 12px; flex-direction: column; }
+      .whatsapp-btn { width: 100%; justify-content: center; padding: 12px 20px; font-size: 1rem; }
     }
 
     /* ---------- UTILITY: scroll to section ---------- */
@@ -636,7 +695,7 @@
 
 <div class="container">
 
-  <!-- ========== HEADER - Mobile Friendly with Light White Background ========== -->
+  <!-- ========== HEADER - Light White (matched to projivo) ========== -->
   <header class="navbar">
     <div class="logo">🏡 Real<span>EstatePro</span></div>
     
@@ -657,16 +716,25 @@
     </nav>
   </header>
 
-  <!-- ========== HERO ========== -->
+  <!-- ========== HERO with new content ========== -->
   <section class="hero" id="contact-section">
     <div class="hero-content">
-      <h1><i class="fas fa-building"></i> Get Expert Real Estate &amp; Property Guidance</h1>
-      <p>Helping you find, buy, sell, and invest in properties with personalized advice, market insights, legal support, and a transparent process.</p>
-
-      <!-- Hero Image from your URL -->
-      <div class="hero-image-wrap">
-        <img src="https://sterlingdevelopers.com/blog/wp-content/uploads/2023/12/Residential-Real-Estate-1.jpg" alt="Residential real estate property" />
+      <h1><i class="fas fa-store"></i> Exclusive Pre-leased &amp; Ready-to-Move Vacant Spaces</h1>
+      
+      <div class="highlight-box">
+        <p>Most Successful High Street Destination at Prime Location with Exceptional Connectivity.</p>
+        <div class="price-tag">₹75 Lakhs*</div>
+        <div style="font-weight: 600; color: #1e293b; margin-bottom: 12px;">Lockable Shops Starts</div>
+        <div class="stats">
+          <span><i class="fas fa-users"></i> 1,00,000+ High Net-Worth Families</span>
+          <span><i class="fas fa-building"></i> 50+ Residential Developments</span>
+        </div>
       </div>
+
+      <!-- WhatsApp Integration -->
+      <a href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20book%20a%20site%20visit%20for%20the%20commercial%20spaces." target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i> 📞 Book Site Visit
+      </a>
 
       <div class="badge-group">
         <span><i class="fas fa-user-tie"></i> Expert Agents</span>
@@ -675,6 +743,11 @@
         <span><i class="fas fa-check-circle"></i> Transparent Process</span>
       </div>
     </div>
+    
+    <div class="hero-image-wrap">
+      <img src="https://sterlingdevelopers.com/blog/wp-content/uploads/2023/12/Residential-Real-Estate-1.jpg" alt="Residential real estate property" />
+    </div>
+
     <div class="hero-form">
       <h3>Free Property Consultation</h3>
       <p>Fill in your details, we'll get back shortly.</p>
@@ -812,7 +885,7 @@
       </tbody>
     </table>
   </div>
-  <p style="font-size:0.85rem; color:#3d5a73;"><i class="fas fa-info-circle"></i> *Prices are indicative and subject to change. Please verify with the respective developer/RERA.</p>
+  <p style="font-size:0.85rem; color:#475569;"><i class="fas fa-info-circle"></i> *Prices are indicative and subject to change. Please verify with the respective developer/RERA.</p>
 
   <!-- ========== INTERNATIONAL INVESTMENT ========== -->
   <h2 class="section-title" id="invest-section">Invest in International Property</h2>
@@ -830,7 +903,7 @@
     <div><h4><i class="fas fa-building"></i> Freehold &amp; Leasehold</h4><p>Choose from freehold ownership or long‑term lease options in prime locations.</p></div>
     <div><h4><i class="fas fa-passport"></i> Residency &amp; Citizenship</h4><p>Many countries offer residency or citizenship pathways through real estate investment.</p></div>
   </div>
-  <p style="color:#2c3e50;">Every year, over 15,000 Indians invest in overseas property. With our expert guidance, we ensure a smooth legal process, property management, and safe transaction. Our team provides end‑to‑end support for international buyers.</p>
+  <p style="color:#334155;">Every year, over 15,000 Indians invest in overseas property. With our expert guidance, we ensure a smooth legal process, property management, and safe transaction. Our team provides end‑to‑end support for international buyers.</p>
   <a href="#contact-section" class="btn-abroad">Get Started on Global Investment <i class="fas fa-arrow-right"></i></a>
 
   <!-- ========== TESTIMONIALS ========== -->
