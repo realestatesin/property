@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RealEstatePro – Expert Property Guidance</title>
+  <title>RealEstatePro – Gurgaon Property Experts</title>
   <!-- Font Awesome 6 (free) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <style>
@@ -15,8 +15,8 @@
     }
 
     body {
-      background-color: #faf6f0;
-      color: #1e1a2b;
+      background-color: #f5f0eb;
+      color: #1a1a2e;
       line-height: 1.6;
     }
 
@@ -33,43 +33,43 @@
       align-items: center;
       padding: 18px 0;
       flex-wrap: wrap;
-      border-bottom: 1px solid #e4dbd0;
+      border-bottom: 1px solid #ddd0c4;
     }
 
     .logo {
       font-size: 1.8rem;
       font-weight: 700;
-      color: #2c1b4a;
+      color: #1a1a2e;
       letter-spacing: -0.5px;
     }
     .logo span {
-      color: #b86b4c;
+      color: #c0392b;
     }
     .nav-links {
       display: flex;
       gap: 32px;
       font-weight: 500;
-      color: #3d2a5c;
+      color: #2d2d44;
     }
     .nav-links a {
       text-decoration: none;
       color: inherit;
     }
     .nav-links a:hover {
-      color: #b86b4c;
+      color: #c0392b;
     }
     .btn-outline {
-      border: 2px solid #b86b4c;
+      border: 2px solid #c0392b;
       background: transparent;
       padding: 8px 22px;
       border-radius: 40px;
       font-weight: 600;
-      color: #b86b4c;
+      color: #c0392b;
       cursor: pointer;
       transition: 0.2s;
     }
     .btn-outline:hover {
-      background: #b86b4c;
+      background: #c0392b;
       color: #fff;
     }
 
@@ -89,15 +89,15 @@
       font-size: 3rem;
       font-weight: 700;
       line-height: 1.2;
-      color: #1e1a2b;
+      color: #1a1a2e;
     }
     .hero-content h1 i {
-      color: #b86b4c;
+      color: #c0392b;
       margin-right: 6px;
     }
     .hero-content p {
       font-size: 1.2rem;
-      color: #4a3a5a;
+      color: #3d3d5c;
       margin: 20px 0 28px;
       max-width: 600px;
     }
@@ -108,16 +108,35 @@
       margin: 20px 0 10px;
     }
     .badge-group span {
-      background: #ece3d9;
+      background: #e8ddd2;
       padding: 6px 18px;
       border-radius: 40px;
       font-weight: 500;
-      color: #2c1b4a;
+      color: #1a1a2e;
       font-size: 0.95rem;
     }
     .badge-group i {
       margin-right: 8px;
-      color: #b86b4c;
+      color: #c0392b;
+    }
+
+    /* Hero image - placed right after the paragraph */
+    .hero-image-wrap {
+      width: 100%;
+      margin: 18px 0 10px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 28px -8px rgba(0,0,0,0.12);
+      max-width: 600px;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: 0.3s;
+    }
+    .hero-image-wrap img:hover {
+      transform: scale(1.02);
     }
 
     .hero-form {
@@ -127,29 +146,29 @@
       box-shadow: 0 20px 35px -8px rgba(0,0,0,0.08);
       flex: 1 1 300px;
       min-width: 280px;
-      border: 1px solid #e4dbd0;
+      border: 1px solid #ddd0c4;
     }
     .hero-form h3 {
       font-size: 1.5rem;
       margin-bottom: 12px;
-      color: #1e1a2b;
+      color: #1a1a2e;
     }
     .hero-form p {
-      color: #5a4a6a;
+      color: #4d4d6a;
       margin-bottom: 20px;
     }
     .hero-form input {
       width: 100%;
       padding: 14px 16px;
       border-radius: 40px;
-      border: 1px solid #d5cbc0;
+      border: 1px solid #ccc0b4;
       font-size: 1rem;
       margin-bottom: 14px;
-      background: #fdfbf9;
+      background: #fcf9f7;
     }
     .hero-form button {
       width: 100%;
-      background: #b86b4c;
+      background: #c0392b;
       color: white;
       padding: 14px;
       border: none;
@@ -160,7 +179,7 @@
       transition: 0.2s;
     }
     .hero-form button:hover {
-      background: #9f583d;
+      background: #a02f22;
     }
     .form-location {
       display: flex;
@@ -168,7 +187,7 @@
       gap: 6px;
       font-size: 1.8rem;
       margin-top: 6px;
-      color: #b86b4c;
+      color: #c0392b;
     }
 
     /* ---------- SECTION TITLE ---------- */
@@ -176,15 +195,15 @@
       font-size: 2.2rem;
       font-weight: 700;
       margin: 50px 0 18px;
-      color: #1e1a2b;
+      color: #1a1a2e;
     }
     .section-sub {
-      color: #4a3a5a;
+      color: #3d3d5c;
       max-width: 700px;
       margin-bottom: 30px;
     }
 
-    /* ---------- PROPERTY CARDS ---------- */
+    /* ---------- PROPERTY CARDS WITH IMAGES ---------- */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -194,33 +213,52 @@
     .property-card {
       background: #fff;
       border-radius: 20px;
-      padding: 20px 20px 24px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
-      border: 1px solid #e4dbd0;
-      transition: 0.2s;
+      padding: 0 0 20px 0;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+      border: 1px solid #ddd0c4;
+      transition: 0.25s;
+      overflow: hidden;
     }
     .property-card:hover {
-      transform: translateY(-5px);
-      border-color: #d4b8a8;
-      box-shadow: 0 16px 30px -10px rgba(80, 40, 30, 0.08);
+      transform: translateY(-6px);
+      border-color: #c0392b;
+      box-shadow: 0 16px 30px -8px rgba(192, 57, 43, 0.12);
+    }
+    .property-card .img-wrap {
+      width: 100%;
+      height: 190px;
+      overflow: hidden;
+      background: #d5c8bc;
+    }
+    .property-card .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.3s;
+    }
+    .property-card:hover .img-wrap img {
+      transform: scale(1.04);
+    }
+    .property-card .card-body {
+      padding: 16px 20px 6px;
     }
     .property-card h4 {
       font-size: 1.3rem;
       margin-bottom: 4px;
     }
     .property-card .loc {
-      color: #6a4a5a;
-      margin-bottom: 12px;
+      color: #5a4a5a;
+      margin-bottom: 8px;
       font-weight: 500;
     }
     .property-card .price {
       font-size: 1.4rem;
       font-weight: 700;
-      color: #7a4a3a;
-      margin: 12px 0 16px;
+      color: #8a2a1a;
+      margin: 10px 0 14px;
     }
     .property-card a {
-      color: #b86b4c;
+      color: #c0392b;
       font-weight: 600;
       text-decoration: none;
     }
@@ -244,13 +282,18 @@
       padding: 18px 14px;
       border-radius: 20px;
       text-align: center;
-      border: 1px solid #e4dbd0;
+      border: 1px solid #ddd0c4;
       font-weight: 500;
       box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      transition: 0.2s;
+    }
+    .why-item:hover, .service-item:hover {
+      border-color: #c0392b;
+      background: #fcf7f3;
     }
     .why-item i, .service-item i {
       font-size: 1.8rem;
-      color: #b86b4c;
+      color: #c0392b;
       display: block;
       margin-bottom: 8px;
     }
@@ -261,7 +304,7 @@
       flex-wrap: wrap;
       justify-content: space-between;
       gap: 10px 20px;
-      background: #ede5db;
+      background: #e8ddd2;
       padding: 28px 24px;
       border-radius: 50px;
       margin: 30px 0;
@@ -271,10 +314,10 @@
       align-items: center;
       gap: 12px;
       font-weight: 600;
-      color: #2c1b4a;
+      color: #1a1a2e;
     }
     .step .num {
-      background: #b86b4c;
+      background: #c0392b;
       color: #fff;
       width: 38px;
       height: 38px;
@@ -290,7 +333,7 @@
       overflow-x: auto;
       margin: 20px 0 30px;
       border-radius: 24px;
-      border: 1px solid #e4dbd0;
+      border: 1px solid #ddd0c4;
       background: #fff;
     }
     table {
@@ -299,17 +342,17 @@
       font-size: 0.95rem;
     }
     th {
-      background: #ede5db;
+      background: #e8ddd2;
       text-align: left;
       padding: 18px 16px;
-      color: #1e1a2b;
+      color: #1a1a2e;
     }
     td {
       padding: 16px;
-      border-top: 1px solid #e4dbd0;
+      border-top: 1px solid #ddd0c4;
     }
     .badge-private {
-      background: #e4d5c8;
+      background: #e8ddd2;
       padding: 4px 14px;
       border-radius: 30px;
       font-size: 0.8rem;
@@ -329,19 +372,19 @@
       padding: 14px 10px;
       border-radius: 40px;
       text-align: center;
-      border: 1px solid #d5cbc0;
+      border: 1px solid #ccc0b4;
       font-weight: 500;
     }
     .intl-item i {
       margin-right: 8px;
-      color: #b86b4c;
+      color: #c0392b;
     }
 
     .features-abroad {
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
-      background: #ede5db;
+      background: #e8ddd2;
       padding: 28px 25px;
       border-radius: 30px;
       margin: 20px 0;
@@ -350,14 +393,14 @@
       flex: 1 1 180px;
     }
     .features-abroad h4 {
-      color: #1e1a2b;
+      color: #1a1a2e;
     }
     .features-abroad p {
-      color: #4a3a5a;
+      color: #3d3d5c;
     }
     .btn-abroad {
       display: inline-block;
-      background: #2c1b4a;
+      background: #1a1a2e;
       color: #fff;
       padding: 14px 44px;
       border-radius: 60px;
@@ -371,7 +414,7 @@
       margin-left: 10px;
     }
     .btn-abroad:hover {
-      background: #4a2a5a;
+      background: #3d3d5c;
     }
 
     /* ---------- TESTIMONIALS ---------- */
@@ -385,7 +428,7 @@
       background: #fff;
       padding: 22px 20px;
       border-radius: 24px;
-      border: 1px solid #e4dbd0;
+      border: 1px solid #ddd0c4;
     }
     .testimonial .stars {
       color: #d4a373;
@@ -398,10 +441,10 @@
     }
     .testimonial .name {
       font-weight: 700;
-      color: #1e1a2b;
+      color: #1a1a2e;
     }
     .testimonial .role {
-      color: #6a4a5a;
+      color: #5a4a5a;
       font-size: 0.9rem;
     }
 
@@ -416,24 +459,24 @@
       background: #fff;
       padding: 20px 24px;
       border-radius: 40px;
-      border: 1px solid #e4dbd0;
+      border: 1px solid #ddd0c4;
     }
     .faq-item strong {
       display: block;
       font-size: 1.05rem;
-      color: #1e1a2b;
+      color: #1a1a2e;
     }
     .faq-item p {
-      color: #4a3a5a;
+      color: #3d3d5c;
       margin-top: 6px;
     }
 
     /* ---------- FOOTER ---------- */
     .footer {
-      border-top: 1px solid #d5cbc0;
+      border-top: 1px solid #ccc0b4;
       padding: 30px 0 20px;
       text-align: center;
-      color: #4a3a5a;
+      color: #3d3d5c;
       font-size: 0.95rem;
     }
 
@@ -443,6 +486,7 @@
       .steps { flex-direction: column; align-items: flex-start; border-radius: 30px; }
       .navbar { flex-direction: column; gap: 12px; align-items: flex-start; }
       .nav-links { flex-wrap: wrap; gap: 16px; }
+      .hero-image-wrap { max-width: 100%; }
     }
   </style>
 </head>
@@ -468,6 +512,12 @@
     <div class="hero-content">
       <h1><i class="fas fa-building"></i> Get Expert Real Estate &amp; Property Guidance</h1>
       <p>Helping you find, buy, sell, and invest in properties with personalized advice, market insights, legal support, and a transparent process.</p>
+
+      <!-- ====== REAL ESTATE IMAGE INSERTED RIGHT HERE ====== -->
+      <div class="hero-image-wrap">
+        <img src="https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Luxury real estate property in Gurgaon" />
+      </div>
+
       <div class="badge-group">
         <span><i class="fas fa-user-tie"></i> Expert Agents</span>
         <span><i class="fas fa-chart-line"></i> Property Valuation</span>
@@ -486,21 +536,75 @@
     </div>
   </section>
 
-  <!-- ========== TOP PROJECTS ========== -->
-  <h2 class="section-title">Top Residential Projects in India</h2>
-  <p class="section-sub">Leading developments known for quality construction, amenities, and prime locations.</p>
+  <!-- ========== TOP PROJECTS (with Gurgaon images) ========== -->
+  <h2 class="section-title">Top Residential Projects in Gurgaon</h2>
+  <p class="section-sub">Premium properties in the heart of the Millennium City – luxury, connectivity, and world-class amenities.</p>
   <div class="card-grid">
-    <div class="property-card"><h4>The World Towers</h4><div class="loc"><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</div><div class="price">₹ 4.5 Cr – 12 Cr</div><a href="#">View Details <i class="fas fa-arrow-right"></i></a></div>
-    <div class="property-card"><h4>Prestige City</h4><div class="loc"><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka</div><div class="price">₹ 2.8 Cr – 7.5 Cr</div><a href="#">View Details <i class="fas fa-arrow-right"></i></a></div>
-    <div class="property-card"><h4>Godrej Woods Estate</h4><div class="loc"><i class="fas fa-map-marker-alt"></i> Noida, Uttar Pradesh</div><div class="price">₹ 2.5 Cr – 6.0 Cr</div><a href="#">View Details <i class="fas fa-arrow-right"></i></a></div>
-    <div class="property-card"><h4>Lodha Codename</h4><div class="loc"><i class="fas fa-map-marker-alt"></i> Thane, Maharashtra</div><div class="price">₹ 1.8 Cr – 4.2 Cr</div><a href="#">View Details <i class="fas fa-arrow-right"></i></a></div>
-    <div class="property-card"><h4>Brigade Golden Triangle</h4><div class="loc"><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka</div><div class="price">₹ 3.0 Cr – 8.5 Cr</div><a href="#">View Details <i class="fas fa-arrow-right"></i></a></div>
-    <div class="property-card"><h4>DLF The Crest</h4><div class="loc"><i class="fas fa-map-marker-alt"></i> Gurugram, Haryana</div><div class="price">₹ 5.0 Cr – 15 Cr</div><a href="#">View Details <i class="fas fa-arrow-right"></i></a></div>
+    <!-- card 1 -->
+    <div class="property-card">
+      <div class="img-wrap"><img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Gurgaon property" /></div>
+      <div class="card-body">
+        <h4>DLF The Crest</h4>
+        <div class="loc"><i class="fas fa-map-marker-alt"></i> Golf Course Road, Gurgaon</div>
+        <div class="price">₹ 5.0 Cr – 15 Cr</div>
+        <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <!-- card 2 -->
+    <div class="property-card">
+      <div class="img-wrap"><img src="https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Gurgaon luxury apartment" /></div>
+      <div class="card-body">
+        <h4>M3M Meridian</h4>
+        <div class="loc"><i class="fas fa-map-marker-alt"></i> Sector 66, Gurgaon</div>
+        <div class="price">₹ 3.2 Cr – 8.5 Cr</div>
+        <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <!-- card 3 -->
+    <div class="property-card">
+      <div class="img-wrap"><img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Gurgaon modern tower" /></div>
+      <div class="card-body">
+        <h4>Godrej Air</h4>
+        <div class="loc"><i class="fas fa-map-marker-alt"></i> Sector 89, Gurgaon</div>
+        <div class="price">₹ 2.8 Cr – 6.2 Cr</div>
+        <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <!-- card 4 -->
+    <div class="property-card">
+      <div class="img-wrap"><img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Gurgaon premium home" /></div>
+      <div class="card-body">
+        <h4>Prestige Cyber City</h4>
+        <div class="loc"><i class="fas fa-map-marker-alt"></i> Cyber City, Gurgaon</div>
+        <div class="price">₹ 4.0 Cr – 11 Cr</div>
+        <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <!-- card 5 -->
+    <div class="property-card">
+      <div class="img-wrap"><img src="https://images.pexels.com/photos/280221/pexels-photo-280221.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Gurgaon villa" /></div>
+      <div class="card-body">
+        <h4>Emaar Palm Hills</h4>
+        <div class="loc"><i class="fas fa-map-marker-alt"></i> Sector 77, Gurgaon</div>
+        <div class="price">₹ 6.5 Cr – 18 Cr</div>
+        <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <!-- card 6 -->
+    <div class="property-card">
+      <div class="img-wrap"><img src="https://images.pexels.com/photos/2587054/pexels-photo-2587054.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Gurgaon high-rise" /></div>
+      <div class="card-body">
+        <h4>Tata Primanti</h4>
+        <div class="loc"><i class="fas fa-map-marker-alt"></i> Sector 72, Gurgaon</div>
+        <div class="price">₹ 3.8 Cr – 9.2 Cr</div>
+        <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
   </div>
 
   <!-- ========== WHY US ========== -->
   <h2 class="section-title">Why Choose Us</h2>
-  <p class="section-sub">Comprehensive support from experts who understand the real estate landscape.</p>
+  <p class="section-sub">Comprehensive support from experts who understand the Gurgaon real estate landscape.</p>
   <div class="why-grid">
     <div class="why-item"><i class="fas fa-user-check"></i> Personalized Consultation</div>
     <div class="why-item"><i class="fas fa-chart-simple"></i> Market Value Prediction</div>
@@ -535,20 +639,20 @@
     <div class="step"><span class="num">5</span> Own / Invest</div>
   </div>
 
-  <!-- ========== TABLE (MUMBAI) ========== -->
-  <h2 class="section-title">Top Residential Projects in Mumbai with Price (RERA)</h2>
-  <p class="section-sub">Mumbai offers some of the most prestigious residential properties, from ultra-luxury apartments to premium suburban homes. Below is a list of top under‑construction and ready‑to‑move projects in Mumbai along with their approximate price range (RERA Carpet Area).</p>
+  <!-- ========== TABLE (GURGAON PROJECTS) ========== -->
+  <h2 class="section-title">Top Gurgaon Projects with Price (RERA)</h2>
+  <p class="section-sub">Gurgaon offers some of the most sought-after residential properties, from ultra-luxury apartments to premium independent floors. Below is a list of top under‑construction and ready‑to‑move projects with approximate price range (RERA Carpet Area).</p>
   <div class="table-wrap">
     <table>
-      <thead><tr><th>Project Name</th><th>Locality</th><th>Type</th><th>Approx. Price (2 BHK)</th></tr></thead>
+      <thead><tr><th>Project Name</th><th>Sector / Locality</th><th>Type</th><th>Approx. Price (2 BHK)</th></tr></thead>
       <tbody>
-        <tr><td><strong>The World Towers</strong></td><td>Lower Parel</td><td><span class="badge-private">Luxury</span></td><td>₹ 4.5 Cr – 12 Cr</td></tr>
-        <tr><td><strong>Lodha Codename</strong></td><td>Thane</td><td><span class="badge-private">Premium</span></td><td>₹ 1.8 Cr – 4.2 Cr</td></tr>
-        <tr><td><strong>Piramal Mahalaxmi</strong></td><td>Mahalaxmi</td><td><span class="badge-private">Ultra-Luxury</span></td><td>₹ 7.0 Cr – 25 Cr</td></tr>
-        <tr><td><strong>Godrej Urban Retreat</strong></td><td>Chembur</td><td><span class="badge-private">Premium</span></td><td>₹ 2.2 Cr – 5.5 Cr</td></tr>
-        <tr><td><strong>Rustomjee Seasons</strong></td><td>Andheri</td><td><span class="badge-private">Mid-Segment</span></td><td>₹ 1.5 Cr – 3.8 Cr</td></tr>
-        <tr><td><strong>Hiranandani Gardens</strong></td><td>Powai</td><td><span class="badge-private">Premium</span></td><td>₹ 3.5 Cr – 9.0 Cr</td></tr>
-        <tr><td><strong>S Raheja Forest</strong></td><td>Borivali</td><td><span class="badge-private">Mid-Segment</span></td><td>₹ 2.0 Cr – 4.5 Cr</td></tr>
+        <tr><td><strong>DLF The Crest</strong></td><td>Golf Course Road</td><td><span class="badge-private">Luxury</span></td><td>₹ 5.0 Cr – 15 Cr</td></tr>
+        <tr><td><strong>M3M Meridian</strong></td><td>Sector 66</td><td><span class="badge-private">Premium</span></td><td>₹ 3.2 Cr – 8.5 Cr</td></tr>
+        <tr><td><strong>Godrej Air</strong></td><td>Sector 89</td><td><span class="badge-private">Premium</span></td><td>₹ 2.8 Cr – 6.2 Cr</td></tr>
+        <tr><td><strong>Prestige Cyber City</strong></td><td>Cyber City</td><td><span class="badge-private">Ultra-Luxury</span></td><td>₹ 4.0 Cr – 11 Cr</td></tr>
+        <tr><td><strong>Emaar Palm Hills</strong></td><td>Sector 77</td><td><span class="badge-private">Luxury</span></td><td>₹ 6.5 Cr – 18 Cr</td></tr>
+        <tr><td><strong>Tata Primanti</strong></td><td>Sector 72</td><td><span class="badge-private">Premium</span></td><td>₹ 3.8 Cr – 9.2 Cr</td></tr>
+        <tr><td><strong>Trehan Iris</strong></td><td>New Gurgaon</td><td><span class="badge-private">Mid-Segment</span></td><td>₹ 1.8 Cr – 4.5 Cr</td></tr>
       </tbody>
     </table>
   </div>
@@ -575,25 +679,25 @@
 
   <!-- ========== TESTIMONIALS ========== -->
   <h2 class="section-title">Client Testimonials</h2>
-  <p class="section-sub">Real stories from clients we've helped.</p>
+  <p class="section-sub">Real stories from clients we've helped in Gurgaon and beyond.</p>
   <div class="testimonial-grid">
-    <div class="testimonial"><div class="stars">★★★★★</div><p>“The property valuation and negotiation support were spot on!”</p><div class="name">- Vikram S.</div><div class="role">Investor, Mumbai</div></div>
-    <div class="testimonial"><div class="stars">★★★★★</div><p>“Got my dream home thanks to their patient guidance.”</p><div class="name">- Meera R.</div><div class="role">Homeowner, Bengaluru</div></div>
-    <div class="testimonial"><div class="stars">★★★★★</div><p>“Transparent process for buying an NRI property. Highly recommended.”</p><div class="name">- Ananya P.</div><div class="role">NRI Buyer, London</div></div>
+    <div class="testimonial"><div class="stars">★★★★★</div><p>“The team helped me find my dream apartment in DLF Phase 5. Flawless process!”</p><div class="name">- Vikram S.</div><div class="role">Investor, Gurgaon</div></div>
+    <div class="testimonial"><div class="stars">★★★★★</div><p>“Got the best deal for my 3BHK in Sector 56. Highly professional.”</p><div class="name">- Meera R.</div><div class="role">Homeowner, Gurgaon</div></div>
+    <div class="testimonial"><div class="stars">★★★★★</div><p>“Transparent process for buying an NRI property in Gurgaon. Highly recommended.”</p><div class="name">- Ananya P.</div><div class="role">NRI Buyer, London</div></div>
   </div>
 
   <!-- ========== FAQ ========== -->
   <h2 class="section-title">Frequently Asked Questions</h2>
   <div class="faq-list">
-    <div class="faq-item"><strong><i class="fas fa-question-circle" style="color:#b86b4c; margin-right:10px;"></i> What services do you offer for property buyers?</strong><p>We provide end‑to‑end support, from property search and site visits to legal verification, home loan assistance, and registration.</p></div>
-    <div class="faq-item"><strong><i class="fas fa-question-circle" style="color:#b86b4c; margin-right:10px;"></i> Do you assist with property selling and valuation?</strong><p>Yes, we help with accurate market valuation, marketing your property, and negotiating the best price.</p></div>
-    <div class="faq-item"><strong><i class="fas fa-question-circle" style="color:#b86b4c; margin-right:10px;"></i> Can you help with RERA and legal documentation?</strong><p>Absolutely. We ensure all properties are RERA‑registered and handle all legal due diligence and paperwork.</p></div>
-    <div class="faq-item"><strong><i class="fas fa-question-circle" style="color:#b86b4c; margin-right:10px;"></i> Is the initial consultation free?</strong><p>Yes, our first consultation is completely free of charge.</p></div>
+    <div class="faq-item"><strong><i class="fas fa-question-circle" style="color:#c0392b; margin-right:10px;"></i> What services do you offer for property buyers in Gurgaon?</strong><p>We provide end‑to‑end support, from property search and site visits to legal verification, home loan assistance, and registration.</p></div>
+    <div class="faq-item"><strong><i class="fas fa-question-circle" style="color:#c0392b; margin-right:10px;"></i> Do you assist with property selling and valuation in Gurgaon?</strong><p>Yes, we help with accurate market valuation, marketing your property, and negotiating the best price.</p></div>
+    <div class="faq-item"><strong><i class="fas fa-question-circle" style="color:#c0392b; margin-right:10px;"></i> Can you help with RERA and legal documentation?</strong><p>Absolutely. We ensure all properties are RERA‑registered and handle all legal due diligence and paperwork.</p></div>
+    <div class="faq-item"><strong><i class="fas fa-question-circle" style="color:#c0392b; margin-right:10px;"></i> Is the initial consultation free?</strong><p>Yes, our first consultation is completely free of charge.</p></div>
   </div>
 
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
-    <p>&copy; 2026 RealEstatePro – Expert Property Guidance. All rights reserved.</p>
+    <p>&copy; 2026 RealEstatePro – Gurgaon Property Experts. All rights reserved.</p>
     <p style="margin-top: 6px; font-size:0.85rem;"><i class="fas fa-shield-alt"></i> RERA compliant &bull; <i class="fas fa-lock"></i> Secure transactions</p>
   </footer>
 
