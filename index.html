@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RealEstatePro – Expert Property Guidance</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    }
+
+    body {
+      background-color: #faf6f0;
+      color: #1e1a2b;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- HEADER ---------- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #e4dbd0;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2c1b4a;
+      letter-spacing: -0.5px;
+    }
+    .logo span {
+      color: #b86b4c;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-weight: 500;
+      color: #3d2a5c;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .nav-links a:hover {
+      color: #b86b4c;
+    }
+    .btn-outline {
+      border: 2px solid #b86b4c;
+      background: transparent;
+      padding: 8px 22px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #b86b4c;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-outline:hover {
+      background: #b86b4c;
+      color: #fff;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 0 30px;
+      gap: 30px;
+    }
+    .hero-content {
+      flex: 1 1 400px;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: #1e1a2b;
+    }
+    .hero-content h1 i {
+      color: #b86b4c;
+      margin-right: 6px;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #4a3a5a;
+      margin: 20px 0 28px;
+      max-width: 600px;
+    }
+    .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 28px;
+      margin: 20px 0 10px;
+    }
+    .badge-group span {
+      background: #ece3d9;
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-weight: 500;
+      color: #2c1b4a;
+      font-size: 0.95rem;
+    }
+    .badge-group i {
+      margin-right: 8px;
+      color: #b86b4c;
+    }
+
+    .hero-form {
+      background: #ffffff;
+      padding: 30px 28px;
+      border-radius: 24px;
+      box-shadow: 0 20px 35px -8px rgba(0,0,0,0.08);
+      flex: 1 1 300px;
+      min-width: 280px;
+      border: 1px solid #e4dbd0;
+    }
+    .hero-form h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: #1e1a2b;
+    }
+    .hero-form p {
+      color: #5a4a6a;
+      margin-bottom: 20px;
+    }
+    .hero-form input {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 40px;
+      border: 1px solid #d5cbc0;
+      font-size: 1rem;
+      margin-bottom: 14px;
+      background: #fdfbf9;
+    }
+    .hero-form button {
+      width: 100%;
+      background: #b86b4c;
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .hero-form button:hover {
+      background: #9f583d;
+    }
+    .form-location {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 1.8rem;
+      margin-top: 6px;
+      color: #b86b4c;
+    }
+
+    /* ---------- SECTION TITLE ---------- */
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 50px 0 18px;
+      color: #1e1a2b;
+    }
+    .section-sub {
+      color: #4a3a5a;
+      max-width: 700px;
+      margin-bottom: 30px;
+    }
+
+    /* ---------- PROPERTY CARDS ---------- */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+      margin: 25px 0 10px;
+    }
+    .property-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px 20px 24px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e4dbd0;
+      transition: 0.2s;
+    }
+    .property-card:hover {
+      transform: translateY(-5px);
+      border-color: #d4b8a8;
+      box-shadow: 0 16px 30px -10px rgba(80, 40, 30, 0.08);
+    }
+    .property-card h4 {
+      font-size: 1.3rem;
+      margin-bottom: 4px;
+    }
+    .property-card .loc {
+      color: #6a4a5a;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    .property-card .price {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #7a4a3a;
+      margin: 12px 0 16px;
+    }
+    .property-card a {
+      color: #b86b4c;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .property-card a i {
+      margin-left: 8px;
+      transition: 0.2s;
+    }
+    .property-card a:hover i {
+      transform: translateX(6px);
+    }
+
+    /* ---------- WHY US / SERVICES ---------- */
+    .why-grid, .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 24px;
+      margin: 30px 0 20px;
+    }
+    .why-item, .service-item {
+      background: #fff;
+      padding: 18px 14px;
+      border-radius: 20px;
+      text-align: center;
+      border: 1px solid #e4dbd0;
+      font-weight: 500;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+    .why-item i, .service-item i {
+      font-size: 1.8rem;
+      color: #b86b4c;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    /* ---------- JOURNEY STEPS ---------- */
+    .steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px 20px;
+      background: #ede5db;
+      padding: 28px 24px;
+      border-radius: 50px;
+      margin: 30px 0;
+    }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+      color: #2c1b4a;
+    }
+    .step .num {
+      background: #b86b4c;
+      color: #fff;
+      width: 38px;
+      height: 38px;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+
+    /* ---------- TABLE ---------- */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 20px 0 30px;
+      border-radius: 24px;
+      border: 1px solid #e4dbd0;
+      background: #fff;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    th {
+      background: #ede5db;
+      text-align: left;
+      padding: 18px 16px;
+      color: #1e1a2b;
+    }
+    td {
+      padding: 16px;
+      border-top: 1px solid #e4dbd0;
+    }
+    .badge-private {
+      background: #e4d5c8;
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #4a2a3a;
+    }
+
+    /* ---------- INTERNATIONAL ---------- */
+    .intl-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 18px;
+      margin: 15px 0 25px;
+    }
+    .intl-item {
+      background: #fff;
+      padding: 14px 10px;
+      border-radius: 40px;
+      text-align: center;
+      border: 1px solid #d5cbc0;
+      font-weight: 500;
+    }
+    .intl-item i {
+      margin-right: 8px;
+      color: #b86b4c;
+    }
+
+    .features-abroad {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      background: #ede5db;
+      padding: 28px 25px;
+      border-radius: 30px;
+      margin: 20px 0;
+    }
+    .features-abroad div {
+      flex: 1 1 180px;
+    }
+    .features-abroad h4 {
+      color: #1e1a2b;
+    }
+    .features-abroad p {
+      color: #4a3a5a;
+    }
+    .btn-abroad {
+      display: inline-block;
+      background: #2c1b4a;
+      color: #fff;
+      padding: 14px 44px;
+      border-radius: 60px;
+      font-weight: 700;
+      text-decoration: none;
+      margin: 15px 0 25px;
+      border: none;
+      font-size: 1rem;
+    }
+    .btn-abroad i {
+      margin-left: 10px;
+    }
+    .btn-abroad:hover {
+      background: #4a2a5a;
+    }
+
+    /* ---------- TESTIMONIALS ---------- */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 28px;
+      margin: 25px 0;
+    }
+    .testimonial {
+      background: #fff;
+      padding: 22px 20px;
+      border-radius: 24px;
+      border: 1px solid #e4dbd0;
+    }
+    .testimonial .stars {
+      color: #d4a373;
+      letter-spacing: 2px;
+      font-size: 1.2rem;
+    }
+    .testimonial p {
+      font-style: italic;
+      margin: 10px 0 6px;
+    }
+    .testimonial .name {
+      font-weight: 700;
+      color: #1e1a2b;
+    }
+    .testimonial .role {
+      color: #6a4a5a;
+      font-size: 0.9rem;
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 30px 0 50px;
+    }
+    .faq-item {
+      background: #fff;
+      padding: 20px 24px;
+      border-radius: 40px;
+      border: 1px solid #e4dbd0;
+    }
+    .faq-item strong {
+      display: block;
+      font-size: 1.05rem;
+      color: #1e1a2b;
+    }
+    .faq-item p {
+      color: #4a3a5a;
+      margin-top: 6px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    .footer {
+      border-top: 1px solid #d5cbc0;
+      padding: 30px 0 20px;
+      text-align: center;
+      color: #4a3a5a;
+      font-size: 0.95rem;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 750px) {
+      .hero-content h1 { font-size: 2.4rem; }
+      .steps { flex-direction: column; align-items: flex-start; border-radius: 30px; }
+      .navbar { flex-direction: column; gap: 12px; align-items: flex-start; }
+      .nav-links { flex-wrap: wrap; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ========== HEADER ========== -->
+  <header class="navbar">
+    <div class="logo">🏡 Real<span>EstatePro</span></div>
+    <div class="nav-links">
+      <a href="#">Properties</a>
+      <a href="#">Services</a>
+      <a href="#">Invest</a>
+      <a href="#">Testimonials</a>
+      <a href="#">FAQ</a>
+    </div>
+    <button class="btn-outline"><i class="fas fa-phone-alt"></i> Contact</button>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1><i class="fas fa-building"></i> Get Expert Real Estate &amp; Property Guidance</h1>
+      <p>Helping you find, buy, sell, and invest in properties with personalized advice, market insights, legal support, and a transparent process.</p>
+      <div class="badge-group">
+        <span><i class="fas fa-user-tie"></i> Expert Agents</span>
+        <span><i class="fas fa-chart-line"></i> Property Valuation</span>
+        <span><i class="fas fa-handshake"></i> Buying &amp; Selling Support</span>
+        <span><i class="fas fa-check-circle"></i> Transparent Process</span>
+      </div>
+    </div>
+    <div class="hero-form">
+      <h3>Free Property Consultation</h3>
+      <p>Fill in your details, we'll get back shortly.</p>
+      <input type="text" placeholder="Full Name" />
+      <input type="email" placeholder="Email Address" />
+      <input type="tel" placeholder="Phone Number" />
+      <button><i class="fas fa-arrow-right"></i> Request Callback</button>
+      <div class="form-location"><i class="fas fa-map-pin"></i> 📍</div>
+    </div>
+  </section>
+
+  <!-- ========== TOP PROJECTS ========== -->
+  <h2 class="section-title">Top Residential Projects in India</h2>
+  <p class="section-sub">Leading developments known for quality construction, amenities, and prime locations.</p>
+  <div class="card-grid">
+    <div class="property-card"><h4>The World Towers</h4><div class="loc"><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</div><div class="price">₹ 4.5 Cr – 12 Cr</div><a href="#">View Details <i class="fas fa-arrow-right"></i></a></div>
+    <div class="property-card"><h4>Prestige City</h4><div class="loc"><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka</div><div class="price">₹ 2.8 Cr – 7.5 Cr</div><a href="#">View Details <i class="fas fa-arrow-right"></i></a></div>
+    <div class="property-card"><h4>Godrej Woods Estate</h4><div class="loc"><i class="fas fa-map-marker-alt"></i> Noida, Uttar Pradesh</div><div class="price">₹ 2.5 Cr – 6.0 Cr</div><a href="#">View Details <i class="fas fa-arrow-right"></i></a></div>
+    <div class="property-card"><h4>Lodha Codename</h4><div class="loc"><i class="fas fa-map-marker-alt"></i> Thane, Maharashtra</div><div class="price">₹ 1.8 Cr – 4.2 Cr</div><a href="#">View Details <i class="fas fa-arrow-right"></i></a></div>
+    <div class="property-card"><h4>Brigade Golden Triangle</h4><div class="loc"><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka</div><div class="price">₹ 3.0 Cr – 8.5 Cr</div><a href="#">View Details <i class="fas fa-arrow-right"></i></a></div>
+    <div class="property-card"><h4>DLF The Crest</h4><div class="loc"><i class="fas fa-map-marker-alt"></i> Gurugram, Haryana</div><div class="price">₹ 5.0 Cr – 15 Cr</div><a href="#">View Details <i class="fas fa-arrow-right"></i></a></div>
+  </div>
+
+  <!-- ========== WHY US ========== -->
+  <h2 class="section-title">Why Choose Us</h2>
+  <p class="section-sub">Comprehensive support from experts who understand the real estate landscape.</p>
+  <div class="why-grid">
+    <div class="why-item"><i class="fas fa-user-check"></i> Personalized Consultation</div>
+    <div class="why-item"><i class="fas fa-chart-simple"></i> Market Value Prediction</div>
+    <div class="why-item"><i class="fas fa-file-contract"></i> RERA Guidance</div>
+    <div class="why-item"><i class="fas fa-hand-holding-usd"></i> Negotiation Support</div>
+    <div class="why-item"><i class="fas fa-gavel"></i> Legal Documentation</div>
+    <div class="why-item"><i class="fas fa-home"></i> Home Loan Assistance</div>
+  </div>
+
+  <!-- ========== SERVICES ========== -->
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-sub">End-to-end assistance for your property journey.</p>
+  <div class="service-grid">
+    <div class="service-item"><i class="fas fa-search"></i> Property Search</div>
+    <div class="service-item"><i class="fas fa-handshake"></i> Buying Assistance</div>
+    <div class="service-item"><i class="fas fa-tag"></i> Selling Assistance</div>
+    <div class="service-item"><i class="fas fa-key"></i> Rental Services</div>
+    <div class="service-item"><i class="fas fa-chart-pie"></i> Valuation &amp; Advisory</div>
+    <div class="service-item"><i class="fas fa-stamp"></i> Legal &amp; Paperwork</div>
+    <div class="service-item"><i class="fas fa-coins"></i> Loan &amp; Mortgage Help</div>
+    <div class="service-item"><i class="fas fa-arrow-trend-up"></i> Investment Guidance</div>
+  </div>
+
+  <!-- ========== JOURNEY ========== -->
+  <h2 class="section-title">Your Property Journey</h2>
+  <p class="section-sub">Simple, transparent, and guided at every step.</p>
+  <div class="steps">
+    <div class="step"><span class="num">1</span> Consult</div>
+    <div class="step"><span class="num">2</span> Site Visit</div>
+    <div class="step"><span class="num">3</span> Shortlist</div>
+    <div class="step"><span class="num">4</span> Paperwork</div>
+    <div class="step"><span class="num">5</span> Own / Invest</div>
+  </div>
+
+  <!-- ========== TABLE (MUMBAI) ========== -->
+  <h2 class="section-title">Top Residential Projects in Mumbai with Price (RERA)</h2>
+  <p class="section-sub">Mumbai offers some of the most prestigious residential properties, from ultra-luxury apartments to premium suburban homes. Below is a list of top under‑construction and ready‑to‑move projects in Mumbai along with their approximate price range (RERA Carpet Area).</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Project Name</th><th>Locality</th><th>Type</th><th>Approx. Price (2 BHK)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>The World Towers</strong></td><td>Lower Parel</td><td><span class="badge-private">Luxury</span></td><td>₹ 4.5 Cr – 12 Cr</td></tr>
+        <tr><td><strong>Lodha Codename</strong></td><td>Thane</td><td><span class="badge-private">Premium</span></td><td>₹ 1.8 Cr – 4.2 Cr</td></tr>
+        <tr><td><strong>Piramal Mahalaxmi</strong></td><td>Mahalaxmi</td><td><span class="badge-private">Ultra-Luxury</span></td><td>₹ 7.0 Cr – 25 Cr</td></tr>
+        <tr><td><strong>Godrej Urban Retreat</strong></td><td>Chembur</td><td><span class="badge-private">Premium</span></td><td>₹ 2.2 Cr – 5.5 Cr</td></tr>
+        <tr><td><strong>Rustomjee Seasons</strong></td><td>Andheri</td><td><span class="badge-private">Mid-Segment</span></td><td>₹ 1.5 Cr – 3.8 Cr</td></tr>
+        <tr><td><strong>Hiranandani Gardens</strong></td><td>Powai</td><td><span class="badge-private">Premium</span></td><td>₹ 3.5 Cr – 9.0 Cr</td></tr>
+        <tr><td><strong>S Raheja Forest</strong></td><td>Borivali</td><td><span class="badge-private">Mid-Segment</span></td><td>₹ 2.0 Cr – 4.5 Cr</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:0.9rem; color:#4a3a5a;"><i class="fas fa-info-circle"></i> *Prices are indicative and subject to change. Please verify with the respective developer/RERA.</p>
+
+  <!-- ========== INTERNATIONAL INVESTMENT ========== -->
+  <h2 class="section-title">Invest in International Property</h2>
+  <p class="section-sub">With rising demand and competitive markets in India, investing in international real estate offers diversified portfolios, rental income, residency options, and global opportunities.</p>
+  <div class="intl-grid">
+    <div class="intl-item"><i class="fas fa-city"></i> Dubai, UAE</div>
+    <div class="intl-item"><i class="fas fa-city"></i> London, UK</div>
+    <div class="intl-item"><i class="fas fa-city"></i> Singapore</div>
+    <div class="intl-item"><i class="fas fa-city"></i> New York, USA</div>
+    <div class="intl-item"><i class="fas fa-city"></i> Sydney, Australia</div>
+    <div class="intl-item"><i class="fas fa-city"></i> Toronto, Canada</div>
+  </div>
+  <div class="features-abroad">
+    <div><h4><i class="fas fa-hand-holding-usd"></i> Rental Yield Potential</h4><p>Properties in key global cities offer rental yields between 5% – 10% annually.</p></div>
+    <div><h4><i class="fas fa-building"></i> Freehold &amp; Leasehold</h4><p>Choose from freehold ownership or long‑term lease options in prime locations.</p></div>
+    <div><h4><i class="fas fa-passport"></i> Residency &amp; Citizenship</h4><p>Many countries offer residency or citizenship pathways through real estate investment.</p></div>
+  </div>
+  <p style="color:#3d2a5c;">Every year, over 15,000 Indians invest in overseas property. With our expert guidance, we ensure a smooth legal process, property management, and safe transaction. Our team provides end‑to‑end support for international buyers.</p>
+  <a href="#" class="btn-abroad">Get Started on Global Investment <i class="fas fa-arrow-right"></i></a>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <h2 class="section-title">Client Testimonials</h2>
+  <p class="section-sub">Real stories from clients we've helped.</p>
+  <div class="testimonial-grid">
+    <div class="testimonial"><div class="stars">★★★★★</div><p>“The property valuation and negotiation support were spot on!”</p><div class="name">- Vikram S.</div><div class="role">Investor, Mumbai</div></div>
+    <div class="testimonial"><div class="stars">★★★★★</div><p>“Got my dream home thanks to their patient guidance.”</p><div class="name">- Meera R.</div><div class="role">Homeowner, Bengaluru</div></div>
+    <div class="testimonial"><div class="stars">★★★★★</div><p>“Transparent process for buying an NRI property. Highly recommended.”</p><div class="name">- Ananya P.</div><div class="role">NRI Buyer, London</div></div>
+  </div>
+
+  <!-- ========== FAQ ========== -->
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <div class="faq-item"><strong><i class="fas fa-question-circle" style="color:#b86b4c; margin-right:10px;"></i> What services do you offer for property buyers?</strong><p>We provide end‑to‑end support, from property search and site visits to legal verification, home loan assistance, and registration.</p></div>
+    <div class="faq-item"><strong><i class="fas fa-question-circle" style="color:#b86b4c; margin-right:10px;"></i> Do you assist with property selling and valuation?</strong><p>Yes, we help with accurate market valuation, marketing your property, and negotiating the best price.</p></div>
+    <div class="faq-item"><strong><i class="fas fa-question-circle" style="color:#b86b4c; margin-right:10px;"></i> Can you help with RERA and legal documentation?</strong><p>Absolutely. We ensure all properties are RERA‑registered and handle all legal due diligence and paperwork.</p></div>
+    <div class="faq-item"><strong><i class="fas fa-question-circle" style="color:#b86b4c; margin-right:10px;"></i> Is the initial consultation free?</strong><p>Yes, our first consultation is completely free of charge.</p></div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <p>&copy; 2026 RealEstatePro – Expert Property Guidance. All rights reserved.</p>
+    <p style="margin-top: 6px; font-size:0.85rem;"><i class="fas fa-shield-alt"></i> RERA compliant &bull; <i class="fas fa-lock"></i> Secure transactions</p>
+  </footer>
+
+</div> <!-- end container -->
+</body>
+</html>
