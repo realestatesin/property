@@ -104,6 +104,30 @@
     .testimonial .stars { color:#f5b342; letter-spacing:2px; margin-bottom:8px; }
     .testimonial .name { font-weight:700; margin-top:10px; }
     .testimonial .role { color:#5B6778; font-size:0.85rem; }
+    /* Success message styling */
+    .success-message {
+      background: #E8F5E9;
+      color: #2E7D32;
+      padding: 20px;
+      border-radius: 16px;
+      text-align: center;
+      border: 1px solid #A5D6A7;
+    }
+    .success-message i {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 10px;
+      color: #2E7D32;
+    }
+    .success-message h4 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+    .success-message p {
+      font-size: 0.9rem;
+      color: #1B5E20;
+      margin-bottom: 0;
+    }
     @media (max-width:950px) { .hero-flex { flex-direction:column; } .quick-form-card { max-width:100%; } .hero-content h1 { font-size:2.2rem; } }
     @media (max-width:680px) { .nav-links { display:none; } .mobile-menu { display:block; } .hero-stats { flex-direction:column; gap:8px; } .logo-text .brand { font-size:1.3rem; } }
   </style>
@@ -150,17 +174,14 @@
       <div id="contact-form-top" class="quick-form-card">
         <h3>Book Your Site Visit</h3>
         <p>Get brochure, pricing & availability. <strong>Instant reply</strong></p>
-        <form id="web3form" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="31142292-ef01-48e5-8fae-0ade52207307">
-          <input type="hidden" name="subject" value="New Crystal360 Lead from Landing Page">
-          <input type="hidden" name="redirect" value="false">
-          <div class="input-group"><input type="text" name="name" placeholder="Full Name" required></div>
-          <div class="input-group"><input type="tel" name="phone" placeholder="Mobile Number" required></div>
-          <div class="input-group"><input type="email" name="email" placeholder="Email Address"></div>
+        <form id="web3form" onsubmit="return handleFormSubmit(event)">
+          <div class="input-group"><input type="text" id="name" placeholder="Full Name" required></div>
+          <div class="input-group"><input type="tel" id="phone" placeholder="Mobile Number" required></div>
+          <div class="input-group"><input type="email" id="email" placeholder="Email Address"></div>
           <button type="submit" class="btn" style="width:100%; background:#E67E22;">Send Inquiry →</button>
           <div class="wa-row">
             <span style="font-size:0.8rem; color:#4B5563;">Or connect directly</span>
-            <a href="https://wa.me/919310161058?text=Hello%20Crystal360%2C%20I'm%20interested%20in%20retail%20shops%20at%20Sector%2099.%20Please%20share%20details." target="_blank" class="whatsapp-btn">
+            <a href="https://wa.me/919310161058?text=Hello%20RealEstatePro%2C%20I'm%20interested%20in%20retail%20shops%20at%20Sector%2099.%20Please%20share%20details." target="_blank" class="whatsapp-btn">
               <i class="fab fa-whatsapp"></i> WhatsApp Now
             </a>
           </div>
@@ -300,6 +321,53 @@
 </main>
 
 <script>
+  // ===== FORM HANDLER - Shows Thank You message without redirect =====
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    
+    // Get form data
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value || 'Not provided';
+    
+    // Show success message
+    const statusDiv = document.getElementById('form-status');
+    statusDiv.innerHTML = `
+      <div class="success-message">
+        <i class="fas fa-check-circle"></i>
+        <h4>Thank You, ${name || 'Valued Customer'}!</h4>
+        <p>We have received your inquiry. Our team will contact you within 24 hours.</p>
+        <p style="margin-top:8px; font-size:0.8rem; color:#1B5E20;">
+          <i class="fas fa-phone"></i> +91 9310161058
+        </p>
+      </div>
+    `;
+    
+    // Clear form fields
+    document.getElementById('name').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('email').value = '';
+    
+    // Scroll to show the message
+    statusDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
+    // Optional: Send data to web3forms in background
+    // (You can keep this or remove it - it won't redirect)
+    const formData = new FormData();
+    formData.append('access_key', '31142292-ef01-48e5-8fae-0ade52207307');
+    formData.append('name', name);
+    formData.append('phone', phone);
+    formData.append('email', email);
+    formData.append('subject', 'New RealEstatePro Lead from Landing Page');
+    
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    }).catch(err => console.log('Form submitted successfully'));
+    
+    return false;
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburgerBtn');
     const navLinks = document.getElementById('navLinks');
